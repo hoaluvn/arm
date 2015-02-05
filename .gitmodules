@@ -1,0 +1,6 @@
+[submodule "tools/src/stlink"]
+	path = tools/src/stlink
+	url = git@github.com:texane/stlink
+[submodule "lib/stm32lib"]
+	path = lib/stm32lib
+	url = https://github.com/rowol/stm32_discovery_arm_gcc
