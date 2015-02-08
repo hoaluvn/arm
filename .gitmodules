@@ -4,3 +4,12 @@
 [submodule "lib/stm32lib"]
 	path = lib/stm32lib
 	url = https://github.com/rowol/stm32_discovery_arm_gcc
+[submodule "lib/tilen"]
+	path = lib/tilen
+	url = https://github.com/MaJerle/stm32f429
+[submodule "lib/libopencm3"]
+	path = lib/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git
+[submodule "prj/libopencm3-examples"]
+	path = prj/libopencm3-examples
+	url = https://github.com/libopencm3/libopencm3-examples
