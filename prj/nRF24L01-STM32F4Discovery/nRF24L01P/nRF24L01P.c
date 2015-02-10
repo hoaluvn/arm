@@ -1,6 +1,6 @@
 
 
-#include "nRF24l01P.h"
+#include "nRF24L01P.h"
 
 //Define the commands for operate the nRF24L01P
 #define READ_nRF_REG    0x00  // Command for read register
