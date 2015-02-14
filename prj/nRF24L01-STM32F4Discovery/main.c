@@ -21,8 +21,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stdio.h"
-#include "stm32f4xx.h"
 #include "stm32f4xx_conf.h"
+#include "stm32f4xx.h"
 #include "nRF24L01P.h"
 #include "stm32f4xx_usart.h"
 //#include "stdio.h"
