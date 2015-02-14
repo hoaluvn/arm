@@ -26,9 +26,10 @@ STM_COMMON=$(PROJ_ROOT)/lib/stm32lib/STM32F4-Discovery_FW_V1.1.0
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
 
-CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld 
+CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld -std=c99
 CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
+CFLAGS += --specs=nosys.specs
 CFLAGS += -I.
 
 # Include files from STM libraries
