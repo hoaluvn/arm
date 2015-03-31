@@ -15,3 +15,4 @@ export PROJ_ROOT=$cur_dir
 
 #libopencm3
 export OPENCM3_DIR=$PROJ_ROOT/lib/libopencm3
+export PATH=$PROJ_ROOT/../arm-tools/bin:$PATH

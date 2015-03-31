@@ -1,6 +1,6 @@
 
 # Put your stlink folder here so make burn will work.
-STLINK=/usr/local/bin
+STLINK=/home/htlu/Works/arm-tools/bin
 
 # Put your source files here (or *.c, etc)
 SRCS=main.c system_stm32f4xx.c stm32f4xx_it.c
@@ -29,7 +29,7 @@ TM_LIB=$(PROJ_ROOT)/lib/tilen/00-STM32F429_LIBRARIES
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
 
-DEFS = -D__ASSEMBLY__ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DTM_DISCO_STM32F4_DISCOVERY
+DEFS = -D__ASSEMBLY__ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DTM_DISCO_STM32F4_DISCOVERY -DSTM32F407VG
 
 CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld
 CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
