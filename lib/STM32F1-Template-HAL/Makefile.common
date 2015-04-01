@@ -1,0 +1,89 @@
+# name of executable
+
+ELF=$(notdir $(CURDIR)).elf                    
+
+# Tool path
+
+#TOOLROOT=/l/arm/codesourcery/bin
+TOOLROOT=$(PROJ_ROOT)/../arm-tools/gcc/bin
+
+# Library path
+
+#LIBROOT=/l/arm/STM32F10x_StdPeriph_Lib_V3.5.0
+LIBROOT=$(PROJ_ROOT)/lib/STM32Cube/STM32Cube_FW_F1_V1.0.0/Drivers
+
+# Tools
+
+CC=$(TOOLROOT)/arm-none-eabi-gcc
+LD=$(TOOLROOT)/arm-none-eabi-gcc
+AR=$(TOOLROOT)/arm-none-eabi-ar
+AS=$(TOOLROOT)/arm-none-eabi-as
+
+# Code Paths
+
+DEVICE=$(LIBROOT)/CMSIS/Device/ST/STM32F1xx/Include
+CORE=$(LIBROOT)/CMSIS/Include
+PERIPH=$(LIBROOT)/STM32F1xx_HAL_Driver
+
+# Search path for standard files
+
+vpath %.c $(TEMPLATEROOT)
+vpath %.s $(TEMPLATEROOT)
+
+# Search path for perpheral library
+
+vpath %.c $(CORE)
+vpath %.c $(PERIPH)/Src
+vpath %.c $(DEVICE)
+
+# Search path for Library
+
+vpath %.c $(TEMPLATEROOT)/Library/ff9/src
+vpath %.c $(TEMPLATEROOT)/Library/ff9/src/option
+vpath %.c $(TEMPLATEROOT)/Library
+
+#  Processor specific
+
+PTYPE = STM32F103xB
+LDSCRIPT = $(TEMPLATEROOT)/STM32F103XB_FLASH.ld
+STARTUP= startup_stm32f103xb.o system_stm32f1xx.o
+
+# Compilation Flags
+
+FULLASSERT = -DUSE_FULL_ASSERT 
+
+LDFLAGS+= -T$(LDSCRIPT) -mthumb -mcpu=cortex-m3 --specs=nosys.specs
+CFLAGS+= -mcpu=cortex-m3 -mthumb 
+CFLAGS+= -I$(TEMPLATEROOT) -I$(DEVICE) -I$(CORE) -I$(PERIPH)/Inc -I.
+CFLAGS+= -D$(PTYPE) -DUSE_HAL_DRIVER $(FULLASSERT)
+CFLAGS+= -I$(TEMPLATEROOT)/Library/ff9/src -I$(TEMPLATEROOT)/Library
+CFLAGS+= -nostdlib
+
+# Build executable 
+
+$(ELF) : $(OBJS)
+	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+
+# compile and generate dependency info
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -MM $(CFLAGS) $< > $*.d
+
+%.o: %.s
+	$(CC) -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f $(OBJS) $(OBJS:.o=.d) $(ELF) startup_stm32f* $(CLEANOTHER)
+
+debug: $(ELF)
+	arm-none-eabi-gdb $(ELF)
+
+
+# pull in dependencies
+
+-include $(OBJS:.o=.d)
+
+
+
+

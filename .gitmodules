@@ -13,3 +13,9 @@
 [submodule "prj/libopencm3-examples"]
 	path = prj/libopencm3-examples
 	url = https://github.com/libopencm3/libopencm3-examples
+[submodule "STM32-Template"]
+	path = STM32-Template
+	url = git://github.com/geoffreymbrown/STM32-Template.git
+[submodule "lib/STM32-Template"]
+	path = lib/STM32-Template
+	url = git://github.com/geoffreymbrown/STM32-Template.git
