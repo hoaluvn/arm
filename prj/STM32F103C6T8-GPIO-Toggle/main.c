@@ -102,7 +102,7 @@ int main(void)
     //HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_9);
     /* Insert delay 100 ms */
-    HAL_Delay(100);
+    HAL_Delay(10000);
   }
 }
 
