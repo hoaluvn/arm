@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.8.2 i686-pc-cygwin -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103C8 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IG:\STM-MCU\arm\prj\CooCox\cmsis -IG:\STM-MCU\arm\prj\CooCox -IG:\STM-MCU\arm\prj -IG:\STM-MCU\arm\prj\CooCox\cmsis_boot -IG:\STM-MCU\arm\prj\CooCox\stm_lib\inc -IG:\STM-MCU\arm\prj\CooCox\stm_lib">
+      <target file="stm32f10x_rcc.o" lastModified="14c8f8333a9">
+         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="14c8d0cb786"/>
+      </target>
+      <target file="startup_stm32f10x_md.o" lastModified="14c8f83309d">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="14c8d0cb6e6"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="14c8f832fd2">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="14c8d0cb722"/>
+      </target>
+      <target file="main.o" lastModified="14c8f833290">
+         <source file="..\..\..\main.c" lastModified="14c8f832248"/>
+      </target>
+      <target file="stm32f10x_gpio.o" lastModified="14c8f8331a6">
+         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="14c8d0cb6be"/>
+      </target>
+   </processor>
+</history>
