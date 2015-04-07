@@ -81,7 +81,7 @@ int main(void)
   HAL_Init();
 
   /* Configure the system clock to 64 MHz */
-  SystemClock_Config();
+  //SystemClock_Config();
   
   /* -1- Enable GPIO Clock (to be able to program the configuration registers) */
   //LED2_GPIO_CLK_ENABLE();
@@ -102,7 +102,7 @@ int main(void)
     //HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
     /* Insert delay 100 ms */
-    HAL_Delay(100);
+    HAL_Delay(100000);
   }
 }
 
@@ -129,14 +129,14 @@ void SystemClock_Config(void)
   /* PLL configuration: PLLCLK = (HSI / 2) * PLLMUL = (8 / 2) * 16 = 64 MHz */
   /* PREDIV1 configuration: PREDIV1CLK = PLLCLK / HSEPredivValue = 64 / 1 = 64 MHz */
   /* Enable HSI and activate PLL with HSi_DIV2 as source */
-  oscinitstruct.OscillatorType  = RCC_OSCILLATORTYPE_HSI;
-  oscinitstruct.HSEState        = RCC_HSE_OFF;
+  oscinitstruct.OscillatorType  = RCC_OSCILLATORTYPE_HSE;
+  oscinitstruct.HSEState        = RCC_HSE_ON;
   oscinitstruct.LSEState        = RCC_LSE_OFF;
-  oscinitstruct.HSIState        = RCC_HSI_ON;
+  oscinitstruct.HSIState        = RCC_HSI_OFF;
   oscinitstruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   oscinitstruct.HSEPredivValue    = RCC_HSE_PREDIV_DIV1;
   oscinitstruct.PLL.PLLState    = RCC_PLL_ON;
-  oscinitstruct.PLL.PLLSource   = RCC_PLLSOURCE_HSI_DIV2;
+  oscinitstruct.PLL.PLLSource   = RCC_PLLSOURCE_HSE;
   oscinitstruct.PLL.PLLMUL      = RCC_PLL_MUL16;
   if (HAL_RCC_OscConfig(&oscinitstruct)!= HAL_OK)
   {
