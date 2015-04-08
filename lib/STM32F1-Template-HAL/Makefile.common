@@ -77,7 +77,7 @@ clean:
 	rm -f $(OBJS) $(OBJS:.o=.d) $(ELF) startup_stm32f* $(CLEANOTHER)
 
 debug: $(ELF)
-	arm-none-eabi-gdb $(ELF)
+	arm-none-eabi-gdb --eval-command="tar ext :4242" $(ELF)
 
 
 # pull in dependencies
