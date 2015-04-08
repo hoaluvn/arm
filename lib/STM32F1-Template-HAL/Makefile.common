@@ -18,6 +18,7 @@ CC=$(TOOLROOT)/arm-none-eabi-gcc
 LD=$(TOOLROOT)/arm-none-eabi-gcc
 AR=$(TOOLROOT)/arm-none-eabi-ar
 AS=$(TOOLROOT)/arm-none-eabi-as
+OBJCOPY=$(TOOLROOT)/arm-none-eabi-objcopy
 
 # Code Paths
 
@@ -63,6 +64,8 @@ CFLAGS+= -nostdlib
 
 $(ELF) : $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+	$(OBJCOPY) -O ihex $@ $(basename $@).hex
+	$(OBJCOPY) -O binary $@ $(basename $@).bin
 
 # compile and generate dependency info
 
