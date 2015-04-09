@@ -81,7 +81,7 @@ int main(void)
   HAL_Init();
 
   /* Configure the system clock to 64 MHz */
-  //SystemClock_Config();
+  SystemClock_Config();
   
   /* -1- Enable GPIO Clock (to be able to program the configuration registers) */
   //LED2_GPIO_CLK_ENABLE();
@@ -102,10 +102,8 @@ int main(void)
 		int i;
     //HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    /* Insert delay 100 ms */
-    HAL_Delay(500);
-		//for(i=0; i<800000; i++)
-		//	__asm__("nop;");
+    /* Insert delay 1500 ms */
+    HAL_Delay(1500);
   }
 }
 

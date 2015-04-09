@@ -83,15 +83,6 @@ void HardFault_Handler(void)
   }
 }
 
-void WWDG_IRQHandler(void)
-{
-  /* Go to infinite loop when Hard Fault exception occurs */
-  while (1)
-  {
-		__asm__("nop");
-  }
-}
-
 /**
   * @brief  This function handles Memory Manage exception.
   * @param  None
