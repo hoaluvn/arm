@@ -77,7 +77,7 @@ $(ELF) : $(OBJS)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OBJS:.o=.d) $(ELF) startup_stm32f* $(CLEANOTHER)
+	rm -f $(OBJS) $(OBJS:.o=.d) $(ELF) $(ELF:.elf=.bin) $(ELF:.elf=.hex) startup_stm32f* $(CLEANOTHER)
 
 debug: $(ELF)
 	arm-none-eabi-gdb --eval-command="tar ext :4242" $(ELF)
