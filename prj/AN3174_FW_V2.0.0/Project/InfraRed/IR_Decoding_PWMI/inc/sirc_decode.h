@@ -74,7 +74,7 @@ typedef struct
 /** @defgroup SIRC_Exported_Constants
   * @{
   */
-#define USE_LCD
+//#define USE_LCD
 #define IR_MESSAGE                    " SIRC InfraRed Demo  "
 
 #define IR_TIME_OUT_US                4000 

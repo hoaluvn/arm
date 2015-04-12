@@ -92,7 +92,7 @@ typedef enum RC5_lastBitType tRC5_lastBitType;
   * @{
   */
 
-#define USE_LCD
+//#define USE_LCD
 
 #define IR_TIM                               TIM3                     /*!< Timer used for IR decoding */
 #define TIM_PRESCALER                        23                       /* !< TIM prescaler */

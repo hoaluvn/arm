@@ -38,7 +38,7 @@
    
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
-#include "stm32100e_eval_lcd.h"
+//#include "stm32100e_eval_lcd.h"
 #include <stdio.h>
 
 #if defined IR_RC5_PROTOCOL

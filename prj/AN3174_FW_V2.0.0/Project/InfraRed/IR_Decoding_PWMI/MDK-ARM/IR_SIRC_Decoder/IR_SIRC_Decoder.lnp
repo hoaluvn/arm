@@ -1,0 +1,16 @@
+--cpu Cortex-M3
+".\ir_sirc_decoder\stm32f10x_it.o"
+".\ir_sirc_decoder\main.o"
+".\ir_sirc_decoder\ir_decode.o"
+".\ir_sirc_decoder\stm32f10x_tim.o"
+".\ir_sirc_decoder\stm32f10x_rcc.o"
+".\ir_sirc_decoder\stm32f10x_gpio.o"
+".\ir_sirc_decoder\stm32f10x_exti.o"
+".\ir_sirc_decoder\misc.o"
+".\ir_sirc_decoder\system_stm32f10x.o"
+".\ir_sirc_decoder\core_cm3.o"
+".\ir_sirc_decoder\startup_stm32f10x_md.o"
+--library_type=microlib --strict --scatter ".\IR_SIRC_Decoder\IR_SIRC_Decoder.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\IR_SIRC_Decoder\IR_SIRC_Decoder.map" -o .\IR_SIRC_Decoder\IR_SIRC_Decoder.axf

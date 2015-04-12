@@ -45,7 +45,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "rc5_decode.h"
-#include "stm32100e_eval_lcd.h"
+//#include "stm32100e_eval_lcd.h"
 #include "ir_commands.c"
 
 /** @addtogroup STM32F10x_Infrared_Decoders

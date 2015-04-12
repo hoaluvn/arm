@@ -25,7 +25,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "ir_decode.h"
 #include <stdio.h>
-#include "stm32100e_eval_lcd.h"
+//#include "stm32100e_eval_lcd.h"
 
 /** @addtogroup STM32F10x_Infrared_Decoders
   * @{
@@ -89,10 +89,10 @@ IR_Frame_TypeDef IR_FRAME;
 int32_t main(void)
 { 
   /* Initialize the Color LCD mounted on STM32100E-EVAL */
-  STM32100E_LCD_Init();
+  //HL STM32100E_LCD_Init();
   
   /* Clear the LCD */ 
-  LCD_Clear(LCD_COLOR_WHITE);
+  //HL LCD_Clear(LCD_COLOR_WHITE);
 
 #if defined IR_RC5_PROTOCOL
   IR_RC5_Init();
