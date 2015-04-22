@@ -88,6 +88,11 @@ IR_Frame_TypeDef IR_FRAME;
 
 int32_t main(void)
 { 
+	//uint8_t status;
+	
+  /* Clock init */
+	//SystemInit();
+	
   /* Initialize the Color LCD mounted on STM32100E-EVAL */
   //HL STM32100E_LCD_Init();
   
@@ -100,6 +105,8 @@ int32_t main(void)
   IR_Init();
 #endif 
   
+	//GPIO_WriteBit(IR_LED_PORT, IR_LED_PIN, (BitAction) 1);
+	
   while(1)
   { 
 #if defined (IR_RC5_PROTOCOL)
@@ -108,6 +115,15 @@ int32_t main(void)
 #else
    IR_Decode(&IR_FRAME);
 #endif
+				/* Toggle LED */
+		//if(ir_frame->Command == 1 && ir_frame->Address == 0) {
+		if(IR_FRAME.Command == 1 ) {
+			//t_val = GPIO_ReadInputDataBit(IR_LED_PORT, IR_LED_PIN);
+			//t_val = t_val ^ 1;
+			GPIO_WriteBit(IR_LED_PORT, IR_LED_PIN, (BitAction) 1);
+    } else if (IR_FRAME.Command == 0) {
+			GPIO_WriteBit(IR_LED_PORT, IR_LED_PIN, (BitAction) 0);
+		}
   }
 }
 

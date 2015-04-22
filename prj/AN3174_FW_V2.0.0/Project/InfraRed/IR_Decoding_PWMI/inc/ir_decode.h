@@ -73,14 +73,15 @@
 #define IR_TIM_IRQn            TIM3_IRQn             /*!< IR TIM IRQ */
 #define IR_TIM_Channel         TIM_Channel_1            /*!< IR TIM Channel */
 
-#define IR_GPIO_PORT           GPIOC                    /*!< Port which IR output is connected */
-#define IR_GPIO_PORT_CLK       RCC_APB2Periph_GPIOC     /*!< IR pin GPIO Clock Port */
+#define IR_GPIO_PORT           GPIOA                    /*!< Port which IR output is connected */
+#define IR_GPIO_PORT_CLK       RCC_APB2Periph_GPIOA     /*!< IR pin GPIO Clock Port */
 #define IR_GPIO_PIN            GPIO_Pin_6               /*!< Pin which IR is connected */
-/**
-  * @}
-  */
 
-/** @defgroup IR_DECODE_Exported_Macros
+#define IR_LED_PORT						 GPIOC
+#define IR_LED_PIN						 GPIO_Pin_13
+#define IR_LED_PORT_CLK				 RCC_APB2Periph_GPIOC
+
+/**
   * @{
   */
 /**

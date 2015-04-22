@@ -155,7 +155,7 @@ void IR_Init(void)
   RCC_APB1PeriphClockCmd(IR_TIM_CLK , ENABLE);
 
   /* Enable Button GPIO clock */
-  RCC_APB2PeriphClockCmd(IR_GPIO_PORT_CLK | RCC_APB2Periph_AFIO, ENABLE);
+  RCC_APB2PeriphClockCmd(IR_GPIO_PORT_CLK | RCC_APB2Periph_AFIO | IR_LED_PORT_CLK, ENABLE);
   
   /* Pin configuration: input floating */
   GPIO_InitStructure.GPIO_Pin = IR_GPIO_PIN;
@@ -163,7 +163,13 @@ void IR_Init(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(IR_GPIO_PORT, &GPIO_InitStructure);
   
-  GPIO_PinRemapConfig(GPIO_FullRemap_TIM3, ENABLE);
+	/* Pin configuration: output floating */
+  GPIO_InitStructure.GPIO_Pin = IR_LED_PIN;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_Init(IR_LED_PORT, &GPIO_InitStructure);
+	
+  //GPIO_PinRemapConfig(GPIO_FullRemap_TIM3, ENABLE);
      
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 
@@ -264,6 +270,8 @@ void IR_Init(void)
   */
 void IR_Decode(IR_Frame_TypeDef *ir_frame)
 {  
+	//uint8_t t_val;
+	
   if(IRFrameReceived != NO) 
   {
     IRTmpPacket.data = __RBIT(IRTmpPacket.data);
@@ -273,10 +281,12 @@ void IR_Decode(IR_Frame_TypeDef *ir_frame)
     ir_frame->Address = (IRTmpPacket.data >> 27) & 0x1F;
 #endif
     
-    /* Default state */
+		/* Default state */
     IRFrameReceived = NO; 
     IR_ResetPacket();
     
+
+		
 #ifdef USE_LCD 
     /* Display command and address */
     LCD_DisplayStringLine(LCD_LINE_5, IR_Commands[ir_frame->Command]);
@@ -326,10 +336,13 @@ void TIM3_IRQHandler (void)
 {
   static uint32_t ICValue1;
   static uint32_t ICValue2;
-  
+  //uint8_t status;
+
+	
   /* IC1 Interrupt */
   if((TIM_GetFlagStatus(IR_TIM, TIM_FLAG_CC1) != RESET))
   {
+
     TIM_ClearFlag(IR_TIM, TIM_FLAG_CC1);
     /* Get the Input Capture value */
     ICValue2 = TIM_GetCapture1(IR_TIM);
@@ -337,6 +350,7 @@ void TIM3_IRQHandler (void)
   }  /* IC2 Interrupt*/   
   else  if((TIM_GetFlagStatus(IR_TIM, TIM_FLAG_CC2) != RESET))
   {
+
     TIM_ClearFlag(IR_TIM, TIM_FLAG_CC2);
     /* Get the Input Capture value */
     ICValue1 = TIM_GetCapture2(IR_TIM);
@@ -346,6 +360,8 @@ void TIM3_IRQHandler (void)
   { 
     /* Clears the IR_TIM's pending flags*/
     TIM_ClearFlag(IR_TIM, TIM_FLAG_Update);
+	//status = GPIO_ReadInputDataBit(IR_GPIO_PORT, IR_GPIO_PIN);
+	//GPIO_WriteBit(IR_LED_PORT, IR_LED_PIN, (BitAction) status);
     
     IR_ResetPacket();
   }
