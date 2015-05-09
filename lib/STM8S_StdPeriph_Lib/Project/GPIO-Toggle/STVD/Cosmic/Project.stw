@@ -52,5 +52,5 @@ Filename=stm8af622x.stp
 Dependencies=
 [Options]
 ActiveProject=stm8s003
-ActiveConfig=Debug
+ActiveConfig=Release
 AddSortedElements=1

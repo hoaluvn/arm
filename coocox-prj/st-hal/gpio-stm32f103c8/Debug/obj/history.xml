@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.8.2 i686-pc-cygwin -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103xB -DUSE_HAL_DRIVERS -IG:\STM-MCU\arm -IG:\STM-MCU\arm\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\STM32F1xx_HAL_Driver\Inc -IG:\STM-MCU\arm\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\CMSIS\Device\ST\STM32F1xx\Include -IG:\STM-MCU\arm\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\CMSIS\Include -IG:\STM-MCU\arm\coocox-prj -IG:\STM-MCU\arm\coocox-prj\st-hal">
+      <target file="stm32f1xx_it.o" lastModified="14c8dcecc9e">
+         <source file="..\..\..\stm32f1xx_it.c" lastModified="14c75c507e2"/>
+      </target>
+      <target file="stm32f1xx_hal.o" lastModified="14c8dcecbc0">
+         <source file="..\..\..\..\..\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" lastModified="14c75c4e454"/>
+      </target>
+      <target file="stm32f1xx_hal_gpio.o" lastModified="14c8dced11f">
+         <source file="..\..\..\..\..\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" lastModified="14c75c4e45e"/>
+      </target>
+      <target file="stm32f1xx_hal_cortex.o" lastModified="14c8dcecd9b">
+         <source file="..\..\..\..\..\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" lastModified="14c75c4e45e"/>
+      </target>
+      <target file="stm32f1xx_hal_crc.o" lastModified="14c8dcece70">
+         <source file="..\..\..\..\..\lib\STM32Cube\STM32Cube_FW_F1_V1.0.0\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_crc.c" lastModified="14c75c4e45e"/>
+      </target>
+      <target file="main.o" lastModified="14c8dced034">
+         <source file="..\..\..\main.c" lastModified="14c8dc33be4"/>
+      </target>
+      <target file="system_stm32f1xx.o" lastModified="14c8dcecf52">
+         <source file="..\..\..\system_stm32f1xx.c" lastModified="14c75c507e2"/>
+      </target>
+   </processor>
+</history>

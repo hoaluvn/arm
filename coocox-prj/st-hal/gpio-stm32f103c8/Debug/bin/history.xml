@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=gpio-stm32f103c8.map -O0 --gc-sections -LC:\CoIDE\configuration\ProgramData\gpio-stm32f103c8 -TC:\CoIDE\configuration\ProgramData\gpio-stm32f103c8/arm-gcc-link.ld -g">
+      <target file="gpio-stm32f103c8.elf" lastModified="14c8dced476">
+         <source file="..\obj\stm32f1xx_hal.o" lastModified="14c8dcecbc0"/>
+         <source file="..\obj\stm32f1xx_it.o" lastModified="14c8dcecc9e"/>
+         <source file="..\obj\stm32f1xx_hal_cortex.o" lastModified="14c8dcecd9b"/>
+         <source file="..\obj\stm32f1xx_hal_crc.o" lastModified="14c8dcece70"/>
+         <source file="..\obj\system_stm32f1xx.o" lastModified="14c8dcecf52"/>
+         <source file="..\obj\main.o" lastModified="14c8dced034"/>
+         <source file="..\obj\stm32f1xx_hal_gpio.o" lastModified="14c8dced11f"/>
+      </target>
+   </processor>
+</history>
