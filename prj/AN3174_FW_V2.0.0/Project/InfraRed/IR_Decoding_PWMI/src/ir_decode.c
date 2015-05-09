@@ -376,7 +376,18 @@ void TIM3_IRQHandler (void)
 static void IR_DataSampling(uint32_t lowPulseLength, uint32_t wholePulseLength)
 {
   uint8_t  tmpBit = 0;
-  
+  static uint8_t cnt = 0;
+	
+	if(cnt == 0) {
+		__asm { nop; };
+	}
+	if (cnt > 0) {
+		__asm { nop; 
+		nop;
+		nop;
+		nop;
+		};
+	}
   /* If the pulse timing is correct */
   if ((IRTmpPacket.status == IR_STATUS_RX)) 
   {
