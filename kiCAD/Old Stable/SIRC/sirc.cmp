@@ -1,0 +1,38 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 5/11/2015 12:28:59 PM
+
+BeginCmp
+TimeStamp = /554E8764;
+Reference = C1;
+ValeurCmp = C;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /554E7D83;
+Reference = IC1;
+ValeurCmp = STM8S003F3P;
+IdModule  = DIP-20__600;
+EndCmp
+
+BeginCmp
+TimeStamp = /554E7E83;
+Reference = J1;
+ValeurCmp = DB25;
+IdModule  = DB25FC;
+EndCmp
+
+BeginCmp
+TimeStamp = /554E8513;
+Reference = P1;
+ValeurCmp = CONN_01X04;
+IdModule  = PINHEAD1-3;
+EndCmp
+
+BeginCmp
+TimeStamp = /554E87DF;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+EndListe
