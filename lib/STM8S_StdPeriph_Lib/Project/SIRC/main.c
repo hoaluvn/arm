@@ -44,14 +44,14 @@ IR_Frame_TypeDef IR_FRAME;
   * @}
   */
 uint8_t Cmd_Codes[5] = {
-	0x1a,
-	0x18,
-	0x1b,
-	0x1c,
-	0x4
+	0x1a,	// pin 1
+	0x18, // pin 2
+	0x1b, // pin 3
+	0x1c, // pin 4
+	0x4	  // pin 5
 };
 
-__IO uint32_t SysTick;
+__IO uint8_t SysTick;
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -62,7 +62,7 @@ __IO uint32_t SysTick;
 void GPIO_Config(void);
 //uint32_t LSIMeasurment(void);
 void TIM4_Config(void);
-void Delay_ms(uint32_t);
+void Delay_ms(uint8_t);
 
 /**
   * @brief  Main program.
@@ -96,10 +96,11 @@ void main(void)
 					
 						GPIO_Write(CTRL_PORT, 0xff & ~(0x1 << i));
 						//halt();
-						Delay_ms(300);
+						Delay_ms(30);
 						GPIO_Write(CTRL_PORT, 0xff);
 					
 						GPIO_WriteHigh(IR_LED_PORT, IR_LED_PIN); // LED OFF
+						Delay_ms(200);
 						//cmd_1d = cmd_2d = 0xff;
 						break;
 					}
@@ -115,11 +116,11 @@ void main(void)
 
 //BitStatus GPIO_ReadInputPin(GPIO_TypeDef* GPIOx, GPIO_Pin_TypeDef GPIO_Pin);
 
-void Delay_ms(uint32_t delay)
+void Delay_ms(uint8_t delay)
 {
 	SysTick = delay;
 	nop();
-	while(SysTick > 0)
+	while(SysTick != 0)
 	{
 		nop();
 	}
