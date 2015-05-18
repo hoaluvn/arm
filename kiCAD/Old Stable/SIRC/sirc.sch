@@ -30,6 +30,8 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:stm8
+LIBS:tsop
+LIBS:st-microelectronics
 LIBS:sirc-cache
 EELAYER 27 0
 EELAYER END
@@ -37,7 +39,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "11 may 2015"
+Date "16 may 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -206,7 +208,7 @@ Entry Wire Line
 Entry Wire Line
 	8200 4900 8300 5000
 Entry Wire Line
-	8200 4700 8300 4800
+	8200 4600 8300 4700
 Entry Wire Line
 	8200 4500 8300 4600
 Entry Wire Line
@@ -216,7 +218,7 @@ Wire Wire Line
 Wire Wire Line
 	8300 4600 8800 4600
 Wire Wire Line
-	8300 4800 8800 4800
+	7750 4800 8800 4800
 Wire Wire Line
 	8300 5000 8800 5000
 Wire Wire Line
@@ -224,12 +226,12 @@ Wire Wire Line
 Wire Wire Line
 	8300 5400 8800 5400
 Text Label 8350 5400 0    60   ~ 0
-CMD0
+CMD2
 Text Label 8350 5200 0    60   ~ 0
 CMD1
 Text Label 8350 5000 0    60   ~ 0
-CMD2
-Text Label 8350 4800 0    60   ~ 0
+CMD0
+Text Label 8350 4700 0    60   ~ 0
 CMD3
 Text Label 8350 4600 0    60   ~ 0
 CMD4
@@ -241,15 +243,12 @@ Wire Wire Line
 	7500 5150 7850 5150
 Text Label 7550 5150 0    60   ~ 0
 IR_OUT
-NoConn ~ 7500 4150
-NoConn ~ 7500 4250
 NoConn ~ 7500 4350
 NoConn ~ 7500 4550
 NoConn ~ 7500 4650
 NoConn ~ 7500 4850
 NoConn ~ 7500 4950
 NoConn ~ 7500 5050
-NoConn ~ 7500 5250
 NoConn ~ 4900 4150
 NoConn ~ 6200 3850
 NoConn ~ 8800 3000
@@ -259,13 +258,11 @@ NoConn ~ 8800 3500
 NoConn ~ 8800 3600
 NoConn ~ 8800 3700
 NoConn ~ 8800 3800
-NoConn ~ 8800 3900
 NoConn ~ 8800 4000
 NoConn ~ 8800 4100
 NoConn ~ 8800 4200
 NoConn ~ 8800 4300
 NoConn ~ 8800 4500
-NoConn ~ 8800 4700
 NoConn ~ 8800 4900
 NoConn ~ 8800 5100
 NoConn ~ 8800 5300
@@ -305,4 +302,37 @@ Wire Wire Line
 	6100 2600 7850 2600
 Wire Wire Line
 	7850 2600 7850 5150
+Wire Wire Line
+	8800 3900 8050 3900
+Wire Wire Line
+	8050 3900 8050 4250
+Wire Wire Line
+	8050 4250 7500 4250
+Wire Wire Line
+	7750 4150 7750 4800
+Wire Wire Line
+	7750 4150 7500 4150
+$Comp
+L SW_PUSH SW1
+U 1 1 555689CB
+P 7250 5750
+F 0 "SW1" H 7400 5860 50  0000 C CNN
+F 1 "SW_PUSH" H 7250 5670 50  0000 C CNN
+F 2 "~" H 7250 5750 60  0000 C CNN
+F 3 "~" H 7250 5750 60  0000 C CNN
+	1    7250 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 5250 7750 5250
+Wire Wire Line
+	7750 5250 7750 5750
+Wire Wire Line
+	7750 5750 7550 5750
+Wire Wire Line
+	6450 5600 6450 5750
+Wire Wire Line
+	6450 5750 6950 5750
+Wire Wire Line
+	8800 4700 8300 4700
 $EndSCHEMATC
