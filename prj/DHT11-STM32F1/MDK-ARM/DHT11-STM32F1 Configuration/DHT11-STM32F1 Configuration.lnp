@@ -1,0 +1,22 @@
+--cpu Cortex-M3
+"dht11-stm32f1 configuration\system_stm32f1xx.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_flash_ex.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_gpio.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_dma.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_rcc_ex.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_cortex.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_pwr.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_gpio_ex.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_uart.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_flash.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_rcc.o"
+"dht11-stm32f1 configuration\stm32f1xx_it.o"
+"dht11-stm32f1 configuration\main.o"
+"dht11-stm32f1 configuration\stm32f1xx_hal_msp.o"
+"dht11-stm32f1 configuration\startup_stm32f103xb.o"
+--library_type=microlib --strict --scatter "DHT11-STM32F1 Configuration\DHT11-STM32F1 Configuration.sct"
+
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "DHT11-STM32F1 Configuration.map" -o "DHT11-STM32F1 Configuration\DHT11-STM32F1 Configuration.axf"
