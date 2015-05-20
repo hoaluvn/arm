@@ -1,6 +1,6 @@
-update=5/10/2015 4:34:35 AM
+update=5/12/2015 3:57:24 PM
 version=1
-last_client=kicad
+last_client=eeschema
 [pcbnew]
 version=1
 LastNetListRead=
@@ -20,14 +20,26 @@ SolderMaskMinWidth=0.000000000000
 DrawSegmentWidth=0.200000000000
 BoardOutlineThickness=0.100000000000
 ModuleOutlineThickness=0.150000000000
+[pcbnew/libraries]
+LibName1=capacitors
+LibName2=connect
+LibName3=connectors_molex_serial_53047-A123
+LibName4=dip_sockets
+LibName5=discret
+LibDir=
+[general]
+version=1
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=C:/Users/htlu/Documents/Kicad/kicad-library-master/library
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -60,3 +72,5 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=stm8
+LibName32=G:/STM-MCU/arm/kiCAD/Old Stable/lib/tsop
+LibName33=G:/STM-MCU/arm/kiCAD/Old Stable/lib/st-microelectronics

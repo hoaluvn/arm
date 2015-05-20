@@ -19,3 +19,6 @@
 [submodule "lib/STM32-Template"]
 	path = lib/STM32-Template
 	url = git://github.com/geoffreymbrown/STM32-Template.git
+[submodule "kiCAD/templates/RPi_Hat_Template"]
+	path = kiCAD/templates/RPi_Hat_Template
+	url = https://github.com/xesscorp/RPi_Hat_Template
